@@ -20,13 +20,13 @@ func main() {
 		go readandwrite(i)
 	}
 	wg.Wait()
-	fmt.Printf("\ntotal time for execution is %v", time.Since(t))
+	fmt.Printf("\ntotal time for execution is %v\n", time.Since(t))
 	fmt.Println(results)
 }
 
 func readandwrite(i int) {
-	var delay float32 = 2000
-	time.Sleep(time.Duration(delay) * time.Millisecond)
+	// var delay float32 = 2000
+	// time.Sleep(time.Duration(delay) * time.Millisecond)
 	fmt.Println("\nresults from db are ", db[i])
 	write(db[i])
 	Log()
